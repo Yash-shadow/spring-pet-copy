@@ -28,13 +28,13 @@ resource "aws_instance" "myec22" {
 
     ami = "ami-0c65adc9a5c1b5d7c"
     instance_type = "t2.medium"
-    key_name = "yet"
-
+    key_name = var.key_pair
+    depends_on = [ aws_security_group.ec2_sg ]
 
     connection {
         type = "ssh"
         user = "ubuntu"
-        private_key = file("C:\\Users\\ybeeredd\\Downloads\\yet.pem")
+        private_key = file(var.key_path)
         host = self.public_ip
         timeout = "1000m"
         
