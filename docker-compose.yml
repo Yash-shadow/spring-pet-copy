@@ -1,7 +1,7 @@
 version: '2'
 services:
         app:
-                image: yash1600/spring-pet:v2
+                image: yash1600/spring-pet:v4
                 container_name: app
                 ports:
                         - 8080:8080
@@ -19,6 +19,27 @@ services:
 
                 volumes:
                         - user_data:/var/lib/postgresql
+
+ 
+        prometheus:
+
+                image: prom/prometheus:v2.38.0
+
+                network_mode: host
+
+                container_name: prometheus-container
+
+                volumes:
+
+                        - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+                command:
+
+                        - '--config.file=/etc/prometheus/prometheus.yml'
+
+                ports:
+
+                        - "9090:9090"
 volumes:
         user_data:
                 driver: local
