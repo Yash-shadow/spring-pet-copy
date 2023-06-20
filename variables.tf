@@ -1,18 +1,21 @@
 variable "secret_key" {
-    default = "AKIAYFHVRW6UGM3TIBM3"
-  
+  default = "AKIASA2BBC7S34MWJW5V"
+
 }
 variable "secret_key_pas" {
-    default = "82PBI6ZCt9T8nGAp951gm7EbZZYdA7vuQOhe0+71"
-  
+  default = "1Uc7RU+kgMwLnWkyUV23DL8NPRevOenZhFz86yA1"
+
 }
 
 variable "key_pair" {
-    default = "yet"
-  
+  default = "kens"
+
 }
 
 variable "key_path" {
-    default = "C:\\Users\\ybeeredd\\Downloads\\yet.pem"
-  
+  default = "C:\\Users\\ybeeredd\\Downloads\\kens.pem"
+
+}
+variable "counts" {
+  default = 10
 }
